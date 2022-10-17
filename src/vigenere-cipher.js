@@ -26,6 +26,9 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 
   encrypt(message, key) {
+    if (!message || !key) {
+      throw new Error('Incorrect arguments!');
+    }
     let text = message.toUpperCase();
     let fount = key.toUpperCase();
     const textLength = text.length;
@@ -47,6 +50,10 @@ const { NotImplementedError } = require('../extensions/index.js');
   
   
   decrypt(message, key) {
+    if (!message || !key) {
+      throw new Error('Incorrect arguments!');
+    }
+    
     let text = message.toUpperCase();
     let fount = key.toUpperCase();
     const messageLength = text.length;
